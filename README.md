@@ -1,4 +1,4 @@
-# 🏆 Tournament Challenge API
+# 🏆 API de Desafios de Torneio
 
 API REST desenvolvida para o gerenciamento de **jogadores**, **torneios** e execução de **desafios de lógica**, incluindo **ranking global** e **por torneio**.
 Este projeto foi construído com **Spring Boot**, integra banco de dados em memória (H2), possui **testes automatizados com cobertura Jacoco** e segue boas práticas de design e desenvolvimento.
@@ -30,15 +30,18 @@ Siga os passos abaixo para executar o ambiente localmente:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/FabioRamos10/backend-tournament.git
-   cd backend-tournament
+   git clone https://github.com/FabioRamos10/Projeto-Spring-Boot-API-de-Desafios-de-Torneio.git
    ```
+
+cd Projeto-Spring-Boot-API-de-Desafios-de-Torneio
+
+````
 
 2. Execute a aplicação com Maven:
 
-   ```bash
-   mvn spring-boot:run
-   ```
+```bash
+mvn spring-boot:run
+````
 
 3. Acesse o Swagger da API:
 
