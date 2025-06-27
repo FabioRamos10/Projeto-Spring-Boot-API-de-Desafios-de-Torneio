@@ -1,0 +1,8 @@
+com\we\tournament\backend\model\Ranking.class
+com\we\tournament\backend\exeception\GlobalExceptionHandler.class
+com\we\tournament\backend\exeception\TournamentNotFoundException.class
+com\we\tournament\backend\exeception\PlayerNotFoundException.class
+com\we\tournament\backend\repository\ChallengeRepository.class
+com\we\tournament\backend\exeception\ChallengeAlreadyExistsException.class
+com\we\tournament\backend\model\Challenge.class
+com\we\tournament\backend\exeception\NotFoundException.class
