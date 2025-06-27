@@ -152,8 +152,6 @@ A versão atual é `0.0.1-SNAPSHOT`.
 * **Fabio Filho Eterno Ramos** – Trabalho inicial, desenvolvimento completo
   [GitHub – FabioRamos10](https://github.com/FabioRamos10)
 
-Você também pode ver a lista de [todos os colaboradores](https://github.com/FabioRamos10/backend-tournament/graphs/contributors) que participaram deste projeto.
-
 ---
 
 ## 📄 Licença
