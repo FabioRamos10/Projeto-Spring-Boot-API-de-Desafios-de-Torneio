@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: com.we.tournament.backend.exeception.GlobalExceptionHandlerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.060 s <<< FAILURE! -- in com.we.tournament.backend.exeception.GlobalExceptionHandlerTest
+com.we.tournament.backend.exeception.GlobalExceptionHandlerTest.testHandleIllegalArgumentException -- Time elapsed: 0.018 s <<< FAILURE!
+java.lang.AssertionError: Response content expected:<Tipo de desafio inválido: invalid-type> but was:<{"error":"Bad Request","message":"Tipo de desafio inválido: invalid-type","timestamp":"2025-06-14T17:14:11.2661339","status":400}>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.ContentResultMatchers.lambda$string$4(ContentResultMatchers.java:148)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.we.tournament.backend.exeception.GlobalExceptionHandlerTest.testHandleIllegalArgumentException(GlobalExceptionHandlerTest.java:60)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

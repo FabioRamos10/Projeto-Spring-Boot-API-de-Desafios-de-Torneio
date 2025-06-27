@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: com.we.tournament.backend.dto.ChallengeRequestDTOValidationTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.778 s <<< FAILURE! -- in com.we.tournament.backend.dto.ChallengeRequestDTOValidationTest
+com.we.tournament.backend.dto.ChallengeRequestDTOValidationTest.shouldFailIfTournamentIdIsNull -- Time elapsed: 0.143 s <<< FAILURE!
+java.lang.AssertionError: 
+[Extracted: propertyPath] 
+Expecting any elements of:
+  []
+to match given predicate but none did.
+	at com.we.tournament.backend.dto.ChallengeRequestDTOValidationTest.shouldFailIfTournamentIdIsNull(ChallengeRequestDTOValidationTest.java:61)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.we.tournament.backend.dto.ChallengeRequestDTOValidationTest.shouldFailIfPlayerIdIsNull -- Time elapsed: 0.002 s <<< FAILURE!
+java.lang.AssertionError: 
+[Extracted: propertyPath] 
+Expecting any elements of:
+  []
+to match given predicate but none did.
+	at com.we.tournament.backend.dto.ChallengeRequestDTOValidationTest.shouldFailIfPlayerIdIsNull(ChallengeRequestDTOValidationTest.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
