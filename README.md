@@ -156,7 +156,7 @@ A versão atual é `0.0.1-SNAPSHOT`.
 
 ## 📄 Licença
 
-Este projeto está licenciado sob os termos da **Licença MIT** – veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+Este projeto está licenciado sob os termos da **Licença MIT**
 
 ---
 
