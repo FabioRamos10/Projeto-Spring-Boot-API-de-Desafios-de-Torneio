@@ -140,12 +140,6 @@ Para implantar a aplicação em ambiente produtivo:
 
 ---
 
-## 🔇 Colaborando
-
-Por favor, leia o arquivo `COLABORACAO.md` para conhecer o nosso código de conduta e o processo para enviar Pull Requests.
-
----
-
 ## 📌 Versão
 
 Este projeto segue a convenção de versionamento **[SemVer](https://semver.org/lang/pt-BR/)**.
