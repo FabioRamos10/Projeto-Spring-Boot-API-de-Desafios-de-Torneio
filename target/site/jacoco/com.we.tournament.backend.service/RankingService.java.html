@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RankingService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">backend</a> &gt; <a href="index.source.html" class="el_package">com.we.tournament.backend.service</a> &gt; <span class="el_source">RankingService.java</span></div><h1>RankingService.java</h1><pre class="source lang-java linenums">package com.we.tournament.backend.service;
+
+import com.we.tournament.backend.dto.RankingDTO;
+import com.we.tournament.backend.model.ChallengeScore;
+import com.we.tournament.backend.model.Player;
+import com.we.tournament.backend.repository.PlayerRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+@Service
+public class RankingService {
+
+    private final ChallengeScoreService scoreService;
+    private final PlayerRepository playerRepo;
+
+<span class="fc" id="L18">    public RankingService(ChallengeScoreService scoreService, PlayerRepository playerRepo) {</span>
+<span class="fc" id="L19">        this.scoreService = scoreService;</span>
+<span class="fc" id="L20">        this.playerRepo = playerRepo;</span>
+<span class="fc" id="L21">    }</span>
+
+    public List&lt;RankingDTO&gt; globalRanking() {
+<span class="fc" id="L24">        Map&lt;Long, Integer&gt; scoreMap = new HashMap&lt;&gt;();</span>
+
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (Player p : playerRepo.findAll()) {</span>
+<span class="fc" id="L27">            int total = scoreService.getByPlayer(p.getId()).stream()</span>
+<span class="fc" id="L28">                    .mapToInt(ChallengeScore::getScore)</span>
+<span class="fc" id="L29">                    .sum();</span>
+<span class="fc" id="L30">            scoreMap.put(p.getId(), total);</span>
+<span class="fc" id="L31">        }</span>
+
+<span class="fc" id="L33">        return scoreMap.entrySet().stream()</span>
+<span class="fc" id="L34">                .map(e -&gt; new RankingDTO(e.getKey(), playerRepo.findById(e.getKey()).get().getName(), e.getValue()))</span>
+<span class="fc" id="L35">                .sorted(Comparator.comparingInt(RankingDTO::getTotalScore).reversed())</span>
+<span class="fc" id="L36">                .collect(Collectors.toList());</span>
+    }
+
+    public List&lt;RankingDTO&gt; tournamentRanking(Long tournamentId) {
+<span class="fc" id="L40">        Map&lt;Long, Integer&gt; scoreMap = new HashMap&lt;&gt;();</span>
+
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        for (ChallengeScore cs : scoreService.getByTournament(tournamentId)) {</span>
+<span class="fc" id="L43">            scoreMap.merge(cs.getPlayer().getId(), cs.getScore(), Integer::sum);</span>
+<span class="fc" id="L44">        }</span>
+
+<span class="fc" id="L46">        return scoreMap.entrySet().stream()</span>
+<span class="fc" id="L47">                .map(e -&gt; new RankingDTO(e.getKey(), playerRepo.findById(e.getKey()).get().getName(), e.getValue()))</span>
+<span class="fc" id="L48">                .sorted(Comparator.comparingInt(RankingDTO::getTotalScore).reversed())</span>
+<span class="fc" id="L49">                .collect(Collectors.toList());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

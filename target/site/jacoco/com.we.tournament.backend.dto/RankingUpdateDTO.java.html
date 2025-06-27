@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RankingUpdateDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">backend</a> &gt; <a href="index.source.html" class="el_package">com.we.tournament.backend.dto</a> &gt; <span class="el_source">RankingUpdateDTO.java</span></div><h1>RankingUpdateDTO.java</h1><pre class="source lang-java linenums">package com.we.tournament.backend.dto;
+
+import java.util.Objects;
+
+public class RankingUpdateDTO {
+
+    private String playerId;
+    private int newScore;
+
+<span class="fc" id="L10">    public RankingUpdateDTO() {</span>
+<span class="fc" id="L11">    }</span>
+
+<span class="fc" id="L13">    public RankingUpdateDTO(String playerId, int newScore) {</span>
+<span class="fc" id="L14">        this.playerId = playerId;</span>
+<span class="fc" id="L15">        this.newScore = newScore;</span>
+<span class="fc" id="L16">    }</span>
+
+    public String getPlayerId() {
+<span class="fc" id="L19">        return playerId;</span>
+    }
+
+    public void setPlayerId(String playerId) {
+<span class="fc" id="L23">        this.playerId = playerId;</span>
+<span class="fc" id="L24">    }</span>
+
+    public int getNewScore() {
+<span class="fc" id="L27">        return newScore;</span>
+    }
+
+    public void setNewScore(int newScore) {
+<span class="fc" id="L31">        this.newScore = newScore;</span>
+<span class="fc" id="L32">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (!(o instanceof RankingUpdateDTO that)) return false;</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        return newScore == that.newScore &amp;&amp;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                Objects.equals(playerId, that.playerId);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L44">        return Objects.hash(playerId, newScore);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L49">        return &quot;RankingUpdateDTO{&quot; +</span>
+                &quot;playerId='&quot; + playerId + '\'' +
+                &quot;, newScore=&quot; + newScore +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
